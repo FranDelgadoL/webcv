@@ -335,7 +335,7 @@ hr {
 }
 
 ul li:before {
-    margin-bottom: 5;
+    margin-bottom: 100;
 }
 
 [class~=page-subtitle] {
@@ -350,7 +350,7 @@ hr {
     margin-bottom: 2rem;
 }
 
-[class~=page-subtitle],[class~=section-description],[class~=section-divider],[class~=section-subheading],p,[class~=section-heading],[class~=page-title],.section--heading {
+[class~=page-subtitle],[class~=section-description],[class~=section-divider],[class~=section-subheading],p,[class~=section-heading],[class~=page-title],.section-heading {
     text-align: center;
 }
 
@@ -398,7 +398,7 @@ html {
     border-right-style: solid;
 }
 
-.section--heading,[class~=section-subheading],[class~=section-heading] {
+section-heading,[class~=section-subheading],[class~=section-heading] {
     font-weight: 500;
 }
 
@@ -410,7 +410,7 @@ p {
     color:  #083c5e ;      /*    #0CAADC   #494949    #40403c  #fafab4 */
 }
 
-.section-small-heading,[class~=section-heading] {
+section-small-heading,[class~=section-heading] {
     margin-bottom: 0rem;
 }
 
@@ -422,12 +422,12 @@ p {
     font-weight: 300;
 }
 
-.section-small-heading {
+section-small-heading {
     color:#083c5e;				/* #f58787 #595959   #fafab4  ver de cambiar color o no */
 }
 
 
-.section-small-heading {
+section-small-heading {
     font-size: 1.1em;
 }
 
@@ -440,7 +440,7 @@ ul li:before {
     margin-right: 1em;
 }
 
-.section-small-heading {
+section-small-heading {
     margin-top: 0;
 }
 
@@ -791,7 +791,8 @@ footer {
 
 @font-face {
   font-family: 'Julius';
-  src: url('fonts/JuliusSansOne-Regular.woff') format('woff');
+  src: url('C:/Users/FranciscoDelgado/Desktop/fd miscel/courserawebstarter/fonts/JuliusSansOne-Regular.woff') format('woff');
+  
 }
 
 body {
@@ -806,6 +807,37 @@ body {
     max-width: 50%;
     height: auto;
     margin: 0 auto 30px; /* Center horizontally, add bottom margin */
+}
+
+.card.h-100 {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.card.h-100 .card-body {
+    flex-grow: 1;
+}
+
+.card.h-100 img {
+    object-fit: cover;
+}
+
+.card.h-100 a.btn {
+    margin-top: auto;
+}
+
+
+.card .card-img-top {
+    width: 600px;  /* Ajusta el ancho deseado en píxeles */
+    height: 140px;  /* Ajusta la altura deseada */
+    object-fit: cover;
+}
+
+.proyecto img.card-img-top {
+    width: 50%;  /* Hacer que las imágenes ocupen el ancho completo del contenedor */
+    height: 100px;  /* Ajustar automáticamente la altura según el ancho */
+    object-fit: cover;  /* Ajustar la imagen sin distorsionar */
 }
 
 
