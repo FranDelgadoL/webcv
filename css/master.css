@@ -791,7 +791,7 @@ footer {
 
 @font-face {
   font-family: 'Julius';
-  src: url('fonts/JuliusSansOne-Regular.woff') format('woff');
+  src: url('../fonts/JuliusSansOne-Regular.woff') format('woff');
   
 }
 
