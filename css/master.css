@@ -337,13 +337,13 @@ footer {
 }
 
 @font-face {
-  font-family: 'Julius';
-  src: url('fonts/JuliusSansOne-Regular.woff') format('woff');
+  font-family: "Julius";
+  src: url("fonts/JuliusSansOne-Regular.woff") format('woff');
   
 }
 
 body {
-  font-family: 'Julius', sans-serif;
+  font-family: "Julius", sans-serif;
   background-color: #fffdf7;
 }
 
