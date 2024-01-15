@@ -338,7 +338,7 @@ footer {
 
 @font-face {
   font-family: "Julius";
-  src: url("fonts/JuliusSansOne-Regular.ttf") format("truetype");
+  src: url("../fonts/JuliusSansOne-Regular.ttf") format("truetype");
   
 }
 
