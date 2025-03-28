@@ -247,6 +247,90 @@ footer {
     font-size: 0.9rem;
 }
 
+@media (max-width: 768px) {
+    /* Barra de navegación en dispositivos móviles */
+
+    header {
+        padding-top: 100px; /* Aumenta el espacio superior en móviles */
+    }
+
+    .text-content {
+        margin-top: 120px; /* Asegura que el contenido de .text-content no se superponga */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Títulos y texto en el header */
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    /* Ajustes de imagen de perfil */
+    .profile-image {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 1rem;
+    }
+
+    /* Contenedor de contenido del header */
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        flex-direction: row; /* Muestra los íconos en fila horizontal */
+        justify-content: space-around; /* Distribuye los íconos uniformemente */
+        padding: 10px; /* Añade padding si es necesario */
+        margin-top: 40px; /* Añadido para mejorar el espaciado en móvil */
+        
+    }
+
+    .social-icons a {
+        font-size: 30px; /* Ajusta el tamaño de los íconos en móvil */
+    }
+
+    /* Sección de proyectos */
+    .portfolio {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Ajustes del footer */
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* Ajuste del icono de contacto */
+    .contact-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Sección social icons para que se muestre mejor en móviles */
+    .social-icons {
+        position: static;
+        transform: none;
+        margin-top: -2rem;
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-icon {
+        background: none;
+    }
+}
+
+
     </style>
 </head>
 <body>
