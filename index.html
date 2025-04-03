@@ -130,8 +130,34 @@
     transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
 }
 
+#ver-certificados {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    font-family: inherit;
+}
 
+#certificados {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #1f1f1f;  /* Color más oscuro para mejorar contraste */
+    color: white;  /* Asegura que el texto sea blanco */
+    display: none; /* Mantenerlo oculto por defecto */
+}
 
+#certificados a {
+    color: #4CAF50; /* Color para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+#certificados a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
 
 
 
@@ -175,6 +201,23 @@
             }
         }
 
+        .credly-link {
+    color: white !important;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre la imagen y el texto */
+}
+
+.credly-link:hover {
+    color: #ddd; /* Color opcional al pasar el mouse */
+}
+
+.credly-img {
+    width: 50px;
+    height: auto; /* Mantiene la proporción original */
+}
+
         section {
             padding: 4rem 2rem;
             background-color: #141414;
@@ -205,6 +248,24 @@
             align-items: center;
             padding: 1rem;
         }
+
+        .portfolio a {
+    color: white !important;
+    text-decoration: none !important; /* Elimina el subrayado */
+}
+
+.portfolio a:hover {
+    text-decoration: none !important; /* Asegura que no haya subrayado al pasar el cursor */
+}
+
+        .project-card img {
+    width: 100%; /* Para que se ajuste al ancho del contenedor */
+    max-width: 320px; /* Define un tamaño máximo */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 8px;
+    object-fit: cover; /* Evita que se distorsione */
+}
+
 
         .project-card:hover {
     transform: translateY(-10px) scale(1.05);
@@ -287,18 +348,6 @@ footer {
         align-items: center;
     }
 
-    .social-icons {
-        flex-direction: row; /* Muestra los íconos en fila horizontal */
-        justify-content: space-around; /* Distribuye los íconos uniformemente */
-        padding: 10px; /* Añade padding si es necesario */
-        margin-top: 40px; /* Añadido para mejorar el espaciado en móvil */
-        
-    }
-
-    .social-icons a {
-        font-size: 30px; /* Ajusta el tamaño de los íconos en móvil */
-    }
-
     /* Sección de proyectos */
     .portfolio {
         grid-template-columns: 1fr;
@@ -316,24 +365,14 @@ footer {
         height: 18px;
     }
 
-    /* Sección social icons para que se muestre mejor en móviles */
-    .social-icons {
-        position: static;
-        transform: none;
-        margin-top: -2rem;
-        display: flex;
-        gap: 1rem;
-    }
 
-    .social-icon {
-        background: none;
-    }
 }
 
 
     </style>
 </head>
-<body>
+<body id="inicio">
+
     <nav>
         <h2>Bienvenidos!</h2>
         
@@ -378,28 +417,62 @@ footer {
     
     <section id="sobre-mi">
         <h2>Sobre Mí</h2>
-        <p>Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas tradicionales. Posteriormente, <br>
+        <p>Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas de distintos tamaños y rubros. Posteriormente, <br>
             amplié mi enfoque hacia el análisis de datos y el emprendimiento. Actualmente, soy agente de bienes raíces y desarrollador web full stack, <br>
             especializado en front-end. Mis certificaciones en análisis de datos y desarrollo web me permiten combinar conocimientos en negocios y <br>
             tecnología para crear soluciones digitales efectivas.</p>
+
+            <h3>Estudios</h3>
+            <ul>
+                <li>Licenciatura en Administración de Empresas</li>
+                <li>Certificación en Análisis de Datos y Ciencia de Datos</li>
+                <li>Certificación en Desarrollo Web Full Stack</li>
+                <li>Curso completado de Amazon Web Services</li>
+                <!-- Agrega más si es necesario -->
+            </ul>
+        
+            <p>
+                <a href="https://www.credly.com/users/francisco-delgado-l" target="_blank" class="credly-link">
+                    <img src="images/credly.jpg" alt="Credly" class="credly-img">
+                    Ver mis credenciales en Credly
+                </a>
+            </p>
+            
+            <button id="ver-certificados">Mostrar Certificados</button>
+
+            <div id="certificados" style="display: none;">
+                <p>Aquí puedes ver mis certificados:</p>
+                <ul>
+                    <li><a href="images/DataAnalyticsCertif.pdf" target="_blank">Certificado de Análisis de Datos</a></li>
+                    <li><a href="images/FullStackSoftwareDeveloperCertif.pdf" target="_blank">Certificado de Desarrollo Web Full Stack</a></li>
+                    <li><a href="images/Data Science Certificate.pdf" target="_blank">Certificado de Ciencia de Datos</a></li>
+                    <li><a href="images/GitandGitHubCertif.pdf" target="_blank">Certificado de Git y GitHub</a></li>
+                    <li><a href="images/EF SET Certificate.pdf" target="_blank">Certificado de EFSet (inglés)</a></li>
+                    <li><a href="images/AWSCLoudSolutionsArchitect.pdf" target="_blank">Certificado de AWS</a></li>
+                </ul>
+            </div>
+            
     </section>
     <section id="proyectos">
         <h2>Mis Proyectos</h2>
         <div class="portfolio">
             <div class="project-card">
-                <img src="proyecto1.jpg" alt="Proyecto 1">
-                <h3>Proyecto 1</h3>
-                <p>Descripción breve del proyecto.</p>
+                <a href="https://drpoletti.com" target="_blank">
+                    <img src="images/webfabipol.jpg" alt="Proyecto 1">
+                    <p>Website oficial Dr. Poletti</p>
+                </a>
             </div>
             <div class="project-card">
-                <img src="proyecto2.jpg" alt="Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <p>Descripción breve del proyecto.</p>
+                <a href="https://frandelgadol.github.io/epika-web/" target="_blank">
+                    <img src="images/webepika.jpg" alt="Proyecto 2">
+                    <p>Website Épika (banda de rock)</p>
+                </a>
             </div>
             <div class="project-card">
-                <img src="proyecto3.jpg" alt="Proyecto 3">
-                <h3>Proyecto 3</h3>
-                <p>Descripción breve del proyecto.</p>
+                <a href="https://frandelgadol.github.io/mundobambini/" target="_blank">
+                    <img src="images/webbambini.jpg" alt="Proyecto 3">
+                    <p>Website Mundo Bambini</p>
+                </a>
             </div>
         </div>
     </section>
@@ -436,7 +509,21 @@ footer {
                 });
             });
         });
+
+        document.getElementById("ver-certificados").addEventListener("click", function() {
+    let div = document.getElementById("certificados");
+    // Si la propiedad display es "none", lo cambiamos a "block"
+    if (div.style.display === "none" || div.style.display === "") {
+        div.style.display = "block"; // Muestra el div
+        this.textContent = "Ocultar Certificados"; // Cambia el texto del botón
+    } else {
+        div.style.display = "none"; // Oculta el div
+        this.textContent = "Mostrar Certificados"; // Cambia el texto del botón
+    }
+});
     </script>
+
+    
 </body>
 </html>
 
