@@ -65,6 +65,20 @@
 
 }
 
+li .submenu {
+    display: none;
+    position: absolute;
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 8px;
+    list-style: none;
+}
+
+li:hover .submenu {
+    display: block;
+}
+
+
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
@@ -139,6 +153,7 @@
     margin-top: 10px;
     display: block;
     font-family: inherit;
+    border-radius: 10%;
 }
 
 #certificados {
@@ -381,6 +396,14 @@ footer {
             <li><a href="#sobre-mi">Sobre Mí</a></li>
             <li><a href="#proyectos">Proyectos</a></li>
             <li><a href="#contacto">Contacto</a></li>
+            <li>
+                Currículum
+                <ul class="submenu">
+                  <li><a href="images/FDespañol.pdf" download="Francisco-Delgado-CV-ES.pdf">Versión en Español</a></li>
+                  <li><a href="images/FDenglish.pdf" download="Francisco-Delgado-CV-EN.pdf">Versión en Inglés</a></li>
+                </ul>
+              </li>
+              
         </ul>
     </nav>
     <header>
