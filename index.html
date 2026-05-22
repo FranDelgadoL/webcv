@@ -16,6 +16,41 @@
             scroll-behavior: smooth;
         }
 
+        .lang-switch {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            gap: 0;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, .15);
+            backdrop-filter: blur(8px);
+
+            z-index: 9999;
+            /* 🔥 esto los trae al frente */
+        }
+
+        .lang-switch button {
+            background: rgba(255, 255, 255, .05);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .lang-switch button:hover {
+            background: rgba(255, 255, 255, .12);
+        }
+
+        .lang-switch .active {
+            background: white;
+            color: black;
+        }
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -46,6 +81,19 @@
 
         nav a:hover {
             color: #8f94fb;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+        }
+
+        .dropdown:hover .submenu {
+            display: block;
         }
 
         header {
@@ -422,32 +470,89 @@
     </style>
 </head>
 
+<div class="lang-switch">
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('en')">EN</button>
+</div>
+
 <body id="inicio">
+
 
     <nav>
         <h2>Bienvenidos!</h2>
 
+
+
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
             <li>
-                Currículum
-                <ul class="submenu">
-                    <li><a href="images/CVFDLesp.pdf" download="Francisco-Delgado-CV-ES.pdf">Versión en Español</a></li>
-                    <li><a href="images/CVFDLeng.pdf" download="Francisco-Delgado-CV-EN.pdf">Versión en Inglés</a></li>
-                </ul>
+                <a href="#inicio" data-es="Inicio" data-en="Home">
+                    Inicio
+                </a>
             </li>
 
+            <li>
+                <a href="#sobre-mi" data-es="Sobre Mí" data-en="About Me">
+                    Sobre Mí
+                </a>
+            </li>
+
+            <li>
+                <a href="#proyectos" data-es="Proyectos" data-en="Projects">
+                    Proyectos
+                </a>
+            </li>
+
+            <li>
+                <a href="#contacto" data-es="Contacto" data-en="Contact">
+                    Contacto
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a href="#" data-es="Currículum" data-en="Resume">
+
+                    Currículum
+                </a>
+
+                <ul class="submenu">
+
+                    <li>
+                        <a href="images/CVFDLesp.pdf" download="Francisco-Delgado-CV-ES.pdf"
+                            data-es="Versión en Español" data-en="Spanish Version">
+
+                            Versión en Español
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="images/CVFDLeng.pdf" download="Francisco-Delgado-CV-EN.pdf" data-es="Versión en Inglés"
+                            data-en="English Version">
+
+                            Versión en Inglés
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
         </ul>
     </nav>
     <header>
         <div class="header-content">
             <div class="text-content">
-                <h1>Web Developer especializado en negocios, portales y soluciones digitales</h1>
-                <p>Desarrollo experiencias web modernas, sistemas y automatizaciones que ayudan a empresas a conseguir
-                    clientes y optimizar procesos.</p>
+                <h1 data-es="Web Developer especializado en negocios, portales y soluciones digitales"
+                    data-en="Web Developer focused on business websites, portals and digital solutions">
+
+                    Web Developer especializado en negocios, portales y soluciones digitales
+                </h1>
+
+                <p data-es="Desarrollo experiencias web modernas, sistemas y automatizaciones que ayudan a empresas a conseguir clientes y optimizar procesos."
+                    data-en="I build modern web experiences, systems and automation that help businesses get clients and optimize processes.">
+
+                    Desarrollo experiencias web modernas, sistemas y automatizaciones que ayudan a empresas a conseguir
+                    clientes y optimizar procesos.
+                </p>
             </div>
             <div class="image-content">
                 <img src="images/fdcartoon.png" alt="Fran Delgado" class="profile-image" />
@@ -476,153 +581,307 @@
     </header>
 
     <section id="sobre-mi">
-        <h2>Sobre Mí</h2>
-        <p>Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas de distintos
-            tamaños y rubros. Posteriormente, <br>
-            amplié mi enfoque hacia el análisis de datos y el emprendimiento. Actualmente, soy agente de bienes raíces y
-            desarrollador web full stack, <br>
-            especializado en front-end. Mis certificaciones en análisis de datos y desarrollo web me permiten combinar
-            conocimientos en negocios y <br>
-            tecnología para crear soluciones digitales efectivas.</p>
 
-        <h3>Estudios</h3>
+        <h2 data-es="Sobre Mí" data-en="About Me">
+
+            Sobre Mí
+        </h2>
+
+        <p data-es="Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas de distintos tamaños y rubros. Posteriormente, amplié mi enfoque hacia el análisis de datos y el emprendimiento. Actualmente, soy agente de bienes raíces y desarrollador web full stack, especializado en front-end. Mis certificaciones en análisis de datos y desarrollo web me permiten combinar conocimientos en negocios y tecnología para crear soluciones digitales efectivas."
+            data-en="I hold a degree in Business Administration with experience in commercial roles across different industries and company sizes. I later expanded into data analysis and entrepreneurship. I am currently a real estate agent and full stack web developer specialized in frontend. My certifications in data analysis and web development allow me to combine business knowledge with technology to build effective digital solutions.">
+
+            Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas de distintos
+            tamaños y rubros. Posteriormente, amplié mi enfoque hacia el análisis de datos y el emprendimiento.
+            Actualmente, soy agente de bienes raíces y desarrollador web full stack, especializado en front-end. Mis
+            certificaciones en análisis de datos y desarrollo web me permiten combinar conocimientos en negocios y
+            tecnología para crear soluciones digitales efectivas.
+        </p>
+
+        <h3 data-es="Estudios" data-en="Education">
+
+            Estudios
+        </h3>
+
         <ul>
-            <li>Licenciatura en Administración de Empresas</li>
-            <li>Certificación en Análisis de Datos y Ciencia de Datos</li>
-            <li>Certificación en Desarrollo Web Full Stack</li>
-            <li>Curso completado de Amazon Web Services</li>
-            <!-- Agrega más si es necesario -->
+            <li data-es="Licenciatura en Administración de Empresas"
+                data-en="Bachelor’s Degree in Business Administration">
+                Licenciatura en Administración de Empresas
+            </li>
+
+            <li data-es="Certificación en Análisis de Datos y Ciencia de Datos"
+                data-en="Data Analysis and Data Science Certification">
+                Certificación en Análisis de Datos y Ciencia de Datos
+            </li>
+
+            <li data-es="Certificación en Desarrollo Web Full Stack" data-en="Full Stack Web Development Certification">
+                Certificación en Desarrollo Web Full Stack
+            </li>
+
+            <li data-es="Curso completado de Amazon Web Services" data-en="Completed Amazon Web Services Course">
+                Curso completado de Amazon Web Services
+            </li>
         </ul>
 
         <p>
             <a href="https://www.credly.com/users/francisco-delgado-l" target="_blank" class="credly-link">
                 <img src="images/credly.jpg" alt="Credly" class="credly-img">
-                Ver mis credenciales en Credly
+
+                <span data-es="Ver mis credenciales en Credly" data-en="View my credentials on Credly">
+
+                    Ver mis credenciales en Credly
+                </span>
             </a>
         </p>
 
-        <button id="ver-certificados">Mostrar Certificados</button>
+        <button id="ver-certificados" data-es="Mostrar Certificados" data-en="Show Certificates">
+
+            Mostrar Certificados
+        </button>
 
         <div id="certificados" style="display: none;">
-            <p>Aquí puedes ver mis certificados:</p>
+
+            <p data-es="Aquí puedes ver mis certificados:" data-en="Here you can view my certificates:">
+
+                Aquí puedes ver mis certificados:
+            </p>
+
             <ul>
-                <li><a href="images/DataAnalyticsCertif.pdf" target="_blank">Certificado de Análisis de Datos</a></li>
-                <li><a href="images/FullStackSoftwareDeveloperCertif.pdf" target="_blank">Certificado de Desarrollo Web
-                        Full Stack</a></li>
-                <li><a href="images/Data Science Certificate.pdf" target="_blank">Certificado de Ciencia de Datos</a>
+
+                <li data-es="Certificado de Análisis de Datos" data-en="Data Analysis Certificate">
+
+                    Certificado de Análisis de Datos
                 </li>
-                <li><a href="images/GitandGitHubCertif.pdf" target="_blank">Certificado de Git y GitHub</a></li>
-                <li><a href="images/EF SET Certificate.pdf" target="_blank">Certificado de EFSet (inglés)</a></li>
-                <li><a href="images/AWSCLoudSolutionsArchitect.pdf" target="_blank">Certificado de AWS</a></li>
+
+                <li data-es="Certificado de Desarrollo Web Full Stack" data-en="Full Stack Web Development Certificate">
+
+                    Certificado de Desarrollo Web Full Stack
+                </li>
+
+                <li data-es="Certificado de Ciencia de Datos" data-en="Data Science Certificate">
+
+                    Certificado de Ciencia de Datos
+                </li>
+
+                <li data-es="Certificado de Git y GitHub" data-en="Git and GitHub Certificate">
+
+                    Certificado de Git y GitHub
+                </li>
+
+                <li data-es="Certificado de EFSet (inglés)" data-en="EFSET English Certificate">
+
+                    Certificado de EFSet (inglés)
+                </li>
+
+                <li data-es="Certificado de AWS" data-en="AWS Certificate">
+
+                    Certificado de AWS
+                </li>
+
             </ul>
+
         </div>
 
     </section>
     <section id="proyectos">
-        <h2>Mis Proyectos</h2>
+        <h2 data-es="Mis Proyectos" data-en="My Projects">
+
+            Mis Proyectos
+        </h2>
+
         <div class="portfolio">
+
+            <!-- HOMY -->
             <div class="project-card">
                 <a href="https://homy.com.py/" target="_blank">
                     <img src="images/homy.jpg" alt="Homy Paraguay">
 
                     <div class="project-info">
-                        <h3>Homy Paraguay – Portal inmobiliario</h3>
 
-                        <p>
+                        <h3 data-es="Homy Paraguay – Portal inmobiliario"
+                            data-en="Homy Paraguay – Real estate platform">
+
+                            Homy Paraguay – Portal inmobiliario
+                        </h3>
+
+                        <p data-es="Desarrollo de un portal inmobiliario con sistema de publicación y búsqueda de propiedades, enfocado en rendimiento, escalabilidad y experiencia de usuario."
+                            data-en="Development of a real estate platform with property listing and search system, focused on performance, scalability and user experience.">
+
                             Desarrollo de un portal inmobiliario con sistema de publicación y búsqueda de propiedades,
                             enfocado en rendimiento, escalabilidad y experiencia de usuario.
                         </p>
 
                         <p><strong>Backend:</strong> Django + Django REST Framework</p>
-                        <p><strong>Base de datos:</strong> PostgreSQL</p>
-                        <p><strong>Infraestructura:</strong> AWS Lightsail + S3 +Route 53</p>
+                        <p><strong>Database:</strong> PostgreSQL</p>
+                        <p><strong>Infrastructure:</strong> AWS Lightsail + S3 + Route 53</p>
 
-                        <p><strong>Enfoque:</strong> Sistema escalable + UX + generación de leads</p>
+                        <p data-es="Enfoque: Sistema escalable + UX + generación de leads"
+                            data-en="Focus: Scalable system + UX + lead generation">
+
+                            Enfoque: Sistema escalable + UX + generación de leads
+                        </p>
                     </div>
                 </a>
             </div>
 
-
+            <!-- DR POLETTI -->
             <div class="project-card">
                 <a href="https://drpoletti.com" target="_blank">
                     <img src="images/webfabipol.jpg" alt="Doctor Poletti website">
 
                     <div class="project-info">
-                        <h3>Dr. Poletti – Website médico profesional</h3>
 
-                        <p>
+                        <h3 data-es="Dr. Poletti – Website médico profesional"
+                            data-en="Dr. Poletti – Medical professional website">
+
+                            Dr. Poletti – Website médico profesional
+                        </h3>
+
+                        <p data-es="Desarrollo de sitio web profesional para un cirujano ortopédico en España, enfocado en presencia digital, confianza médica y captación de pacientes internacionales."
+                            data-en="Development of a professional website for an orthopedic surgeon in Spain, focused on digital presence, medical trust and international patient acquisition.">
+
                             Desarrollo de sitio web profesional para un cirujano ortopédico en España,
                             enfocado en presencia digital, confianza médica y captación de pacientes internacionales.
                         </p>
 
-                        <p><strong>Enfoque:</strong> Branding médico + credibilidad + conversión</p>
-                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend + estructura web</p>
-                        <p><strong>Optimización:</strong> Responsive design + experiencia de usuario</p>
+                        <p data-es="Enfoque: Branding médico + credibilidad + conversión"
+                            data-en="Focus: Medical branding + credibility + conversion">
+
+                            Enfoque: Branding médico + credibilidad + conversión
+                        </p>
+
+                        <p data-es="Rol: Diseño UI + desarrollo frontend + estructura web"
+                            data-en="Role: UI design + frontend development + website structure">
+
+                            Rol: Diseño UI + desarrollo frontend + estructura web
+                        </p>
+
+                        <p data-es="Optimización: Responsive design + experiencia de usuario"
+                            data-en="Optimization: Responsive design + user experience">
+
+                            Optimización: Responsive design + experiencia de usuario
+                        </p>
                     </div>
                 </a>
             </div>
 
+            <!-- ÉPIKA -->
             <div class="project-card">
                 <a href="https://frandelgadol.github.io/nuevawebepika/" target="_blank">
                     <img src="images/webepika.jpg" alt="Épika website">
 
                     <div class="project-info">
-                        <h3>Épika – Website banda de rock (en desarrollo)</h3>
 
-                        <p>
+                        <h3 data-es="Épika – Website banda de rock (en desarrollo)"
+                            data-en="Épika – Rock band website (in development)">
+
+                            Épika – Website banda de rock (en desarrollo)
+                        </h3>
+
+                        <p data-es="Desarrollo de sitio web para banda musical con enfoque en identidad visual, branding y presencia digital para promoción de música y eventos."
+                            data-en="Development of a music band website focused on visual identity, branding and digital presence for music and event promotion.">
+
                             Desarrollo de sitio web para banda musical con enfoque en identidad visual,
                             branding y presencia digital para promoción de música y eventos.
                         </p>
 
-                        <p><strong>Enfoque:</strong> Branding + identidad visual + marketing digital</p>
-                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend</p>
+                        <p data-es="Enfoque: Branding + identidad visual + marketing digital"
+                            data-en="Focus: Branding + visual identity + digital marketing">
+
+                            Enfoque: Branding + identidad visual + marketing digital
+                        </p>
+
+                        <p data-es="Rol: Diseño UI + desarrollo frontend"
+                            data-en="Role: UI design + frontend development">
+
+                            Rol: Diseño UI + desarrollo frontend
+                        </p>
                     </div>
                 </a>
             </div>
 
+            <!-- MUNDO BAMBINI -->
             <div class="project-card">
                 <a href="https://frandelgadol.github.io/mundobambini/" target="_blank">
                     <img src="images/webbambini.jpg" alt="Mundo Bambini website">
 
                     <div class="project-info">
-                        <h3>Mundo Bambini – Sitio web moda infantil (en desarrollo)</h3>
 
-                        <p>
+                        <h3 data-es="Mundo Bambini – Sitio web moda infantil (en desarrollo)"
+                            data-en="Mundo Bambini – Children’s fashion website (in development)">
+
+                            Mundo Bambini – Sitio web moda infantil (en desarrollo)
+                        </h3>
+
+                        <p data-es="Desarrollo de sitio web para marca enfocada en contenido y servicios infantiles, orientado a una experiencia visual amigable, clara y atractiva para padres y usuarios."
+                            data-en="Development of a website for a children-focused brand, designed for a friendly, clear and visually attractive user experience for parents and users.">
+
                             Desarrollo de sitio web para marca enfocada en contenido y servicios infantiles,
                             orientado a una experiencia visual amigable, clara y atractiva para padres y usuarios.
                         </p>
 
-                        <p><strong>Enfoque:</strong> UX visual + branding infantil + navegación simple</p>
-                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend</p>
-                        <p><strong>Optimización:</strong> Diseño responsive + estructura de contenido</p>
+                        <p data-es="Enfoque: UX visual + branding infantil + navegación simple"
+                            data-en="Focus: Visual UX + children branding + simple navigation">
+
+                            Enfoque: UX visual + branding infantil + navegación simple
+                        </p>
+
+                        <p data-es="Optimización: Diseño responsive + estructura de contenido"
+                            data-en="Optimization: Responsive design + content structure">
+
+                            Optimización: Diseño responsive + estructura de contenido
+                        </p>
                     </div>
                 </a>
             </div>
 
+            <!-- KW JOBS -->
             <div class="project-card">
                 <a href="https://uniteakw.com.py/" target="_blank">
                     <img src="images/kwlanding.jpg" alt="KW Jobs Landing Page">
 
                     <div class="project-info">
-                        <h3>KW Jobs – Landing page de reclutamiento</h3>
 
-                        <p>
+                        <h3 data-es="KW Jobs – Landing page de reclutamiento"
+                            data-en="KW Jobs – Recruitment landing page">
+
+                            KW Jobs – Landing page de reclutamiento
+                        </h3>
+
+                        <p data-es="Desarrollo de landing page enfocada en captación de candidatos para reclutamiento inmobiliario, optimizada para conversión y generación de leads."
+                            data-en="Development of a landing page focused on recruiting candidates for real estate hiring, optimized for conversion and lead generation.">
+
                             Desarrollo de landing page enfocada en captación de candidatos para reclutamiento
                             inmobiliario,
                             optimizada para conversión y generación de leads.
                         </p>
 
-                        <p><strong>Enfoque:</strong> Captación de leads + conversión + UX orientado a empleo</p>
-                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend + estructura de conversión</p>
-                        <p><strong>Optimización:</strong> Formularios, claridad de mensaje y experiencia móvil</p>
+                        <p data-es="Enfoque: Captación de leads + conversión + UX orientado a empleo"
+                            data-en="Focus: Lead generation + conversion + job-focused UX">
+
+                            Enfoque: Captación de leads + conversión + UX orientado a empleo
+                        </p>
+
+                        <p data-es="Optimización: Formularios, claridad de mensaje y experiencia móvil"
+                            data-en="Optimization: Forms, clear messaging and mobile experience">
+
+                            Optimización: Formularios, claridad de mensaje y experiencia móvil
+                        </p>
                     </div>
                 </a>
             </div>
+
+        </div>
         </div>
 
         <section id="servicios">
-            <h2>Servicios</h2>
-            <p>
+            <h2 data-es="Servicios" data-en="Services">
+
+                Servicios
+            </h2>
+
+            <p data-es="Desarrollo soluciones digitales enfocadas en ayudar a negocios a crecer, conseguir clientes y mejorar su presencia online."
+                data-en="I develop digital solutions focused on helping businesses grow, get clients and improve their online presence.">
+
                 Desarrollo soluciones digitales enfocadas en ayudar a negocios a crecer, conseguir clientes y mejorar su
                 presencia online.
             </p>
@@ -630,48 +889,78 @@
             <div class="services-grid">
 
                 <div class="service-card">
-                    <h3>Websites corporativos</h3>
-                    <p>
+                    <h3 data-es="Websites corporativos" data-en="Corporate websites">
+
+                        Websites corporativos
+                    </h3>
+                    <p data-es="Sitios web modernos, rápidos y optimizados para empresas que quieren transmitir confianza y profesionalismo."
+                        data-en="Modern, fast and optimized websites for companies that want to build trust and professionalism.">
+
                         Sitios web modernos, rápidos y optimizados para empresas que quieren transmitir confianza y
                         profesionalismo.
                     </p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Landing Pages de conversión</h3>
-                    <p>
+                    <h3 data-es="Landing Pages de conversión" data-en="Conversion landing pages">
+
+                        Landing Pages de conversión
+                    </h3>
+                    <p data-es="Páginas enfocadas en generar clientes, ventas o contactos mediante diseño estratégico y UX optimizado."
+                        data-en="Pages focused on generating leads, sales or contacts through strategic design and optimized UX.">
+
                         Páginas enfocadas en generar clientes, ventas o contactos mediante diseño estratégico y UX
                         optimizado.
                     </p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Portales inmobiliarios</h3>
-                    <p>
+                    <h3 data-es="Portales inmobiliarios" data-en="Real estate platforms">
+
+                        Portales inmobiliarios
+                    </h3>
+                    <p data-es="Sistemas de publicación y búsqueda de propiedades con experiencia optimizada para usuarios y agentes."
+                        data-en="Property listing and search systems optimized for users and real estate agents.">
+
                         Sistemas de publicación y búsqueda de propiedades con experiencia optimizada para usuarios y
                         agentes.
                     </p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Automatización con IA</h3>
-                    <p>
+                    <h3 data-es="Automatización con IA" data-en="AI automation">
+
+                        Automatización con IA
+                    </h3>
+                    <p data-es="Soluciones que integran inteligencia artificial para automatizar procesos, formularios y atención al cliente."
+                        data-en="Solutions using artificial intelligence to automate processes, forms and customer support.">
+
                         Soluciones que integran inteligencia artificial para automatizar procesos, formularios y
                         atención al cliente.
                     </p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Integración de sistemas</h3>
-                    <p>
+                    <h3 data-es="Integración de sistemas" data-en="System integration">
+
+                        Integración de sistemas
+                    </h3>
+                    <p data-es="Conexión de APIs, CRMs y herramientas externas para centralizar y automatizar la gestión de negocios."
+                        data-en="Integration of APIs, CRMs and external tools to centralize and automate business operations.">
+
                         Conexión de APIs, CRMs y herramientas externas para centralizar y automatizar la gestión de
                         negocios.
                     </p>
                 </div>
 
                 <div class="service-card">
-                    <h3>Optimización web</h3>
-                    <p>
+                    <h3 data-es="Optimización web" data-en="Web optimization">
+
+                        Optimización web
+                    </h3>
+                    <p data-es="Mejora de velocidad, SEO básico, experiencia móvil y rendimiento general del sitio."
+                        data-en="Performance optimization, basic SEO, mobile experience and overall website speed improvement.">
+
                         Mejora de velocidad, SEO básico, experiencia móvil y rendimiento general del sitio.
                     </p>
                 </div>
@@ -680,22 +969,35 @@
         </section>
 
         <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Si necesitás una web, un sistema o una solución digital para tu negocio, podés escribirme directamente.
-                Respondo rápido.</p>
+            <h2 data-es="Contacto" data-en="Contact">
+
+                Contacto
+            </h2>
+            <p data-es="Si necesitás una web, un sistema o una solución digital para tu negocio, podés escribirme directamente. Respondo rápido."
+                data-en="If you need a website, system or digital solution for your business, feel free to contact me directly. I respond quickly.">
+
+                Si necesitás una web, un sistema o una solución digital para tu negocio, podés escribirme directamente.
+                Respondo rápido.
+            </p>
             <ul>
 
                 <a href="https://wa.me/595994607333" target="_blank">
                     <img src="https://img.icons8.com/ios-filled/50/4CAF50/whatsapp.png" alt="WhatsApp"
                         class="contact-icon">
-                    Mensaje al 0994 607333
+                    <span data-es="Mensaje al 0994 607333" data-en="Message me on WhatsApp">
+
+                        Mensaje al 0994 607333
+                    </span>
                 </a>
 
 
                 <a href="mailto:franciscodelgalop@gmail.com">
                     <img src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png" alt="Email"
                         class="contact-icon">
-                    franciscodelgalop@gmail.com
+                    <span data-es="Enviar email" data-en="Send email">
+
+                        Enviar email
+                    </span>
                 </a>
 
             </ul>
@@ -726,6 +1028,26 @@
                     div.style.display = "none"; // Oculta el div
                     this.textContent = "Mostrar Certificados"; // Cambia el texto del botón
                 }
+            });
+        </script>
+
+        <script>
+            function setLang(lang) {
+                localStorage.setItem("lang", lang);
+
+                document.querySelectorAll("[data-es]").forEach(el => {
+                    if (lang === "en") {
+                        el.innerText = el.getAttribute("data-en");
+                    } else {
+                        el.innerText = el.getAttribute("data-es");
+                    }
+                });
+            }
+
+            // cargar idioma guardado
+            window.addEventListener("load", () => {
+                const lang = localStorage.getItem("lang") || "es";
+                setLang(lang);
             });
         </script>
 
