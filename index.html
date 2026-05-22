@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,44 +49,46 @@
         }
 
         header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background: linear-gradient(45deg, yellow, #2f4166, #2f4166, #8f94fb, purple );
-    background-size: 400% 400%;
-    animation: gradientAnimation 40s ease infinite;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    flex-direction: column;
-    gap: 1.5rem;
-    overflow: hidden;
-    position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background: linear-gradient(45deg, yellow, #2f4166, #2f4166, #8f94fb, purple);
+            background-size: 400% 400%;
+            animation: gradientAnimation 40s ease infinite;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            overflow: hidden;
+            position: relative;
 
-}
+        }
 
-li .submenu {
-    display: none;
-    position: absolute;
-    background-color: #1f1f1f;
-    padding: 10px;
-    border-radius: 8px;
-    list-style: none;
-}
+        li .submenu {
+            display: none;
+            position: absolute;
+            background-color: #1f1f1f;
+            padding: 10px;
+            border-radius: 8px;
+            list-style: none;
+        }
 
-li:hover .submenu {
-    display: block;
-}
+        li:hover .submenu {
+            display: block;
+        }
 
 
         @keyframes gradientAnimation {
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
@@ -106,87 +109,103 @@ li:hover .submenu {
         }
 
         .profile-image {
-    width: 400px;
-    height: 400px;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    animation: glitch 1s infinite linear alternate-reverse;
+            width: 400px;
+            height: 400px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            animation: glitch 1s infinite linear alternate-reverse;
 
-}
+        }
 
-.social-icons {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    background: transparent; /* Asegura que el fondo sea transparente */
-    padding: 0; /* Si hay algún padding que pueda causar color de fondo, lo eliminamos */
-}
+        .social-icons {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: transparent;
+            /* Asegura que el fondo sea transparente */
+            padding: 0;
+            /* Si hay algún padding que pueda causar color de fondo, lo eliminamos */
+        }
 
-.social-icon {
-    background: transparent; /* Fondo transparente para cada ícono */
-    border: none; /* Eliminar borde si hay alguno */
-}
+        .social-icon {
+            background: transparent;
+            /* Fondo transparente para cada ícono */
+            border: none;
+            /* Eliminar borde si hay alguno */
+        }
 
-.social-icon img {
-    width: 40px; /* Ajusta el tamaño de los íconos */
-    height: 40px;
-    transition: transform 0.3s;
-    background: transparent; /* Asegura que no haya fondo detrás de los íconos */
-    padding: 5px; /* Agrega un poco de espacio alrededor del ícono si lo deseas */
-}
+        .social-icon img {
+            width: 40px;
+            /* Ajusta el tamaño de los íconos */
+            height: 40px;
+            transition: transform 0.3s;
+            background: transparent;
+            /* Asegura que no haya fondo detrás de los íconos */
+            padding: 5px;
+            /* Agrega un poco de espacio alrededor del ícono si lo deseas */
+        }
 
-.social-icon img:hover {
-    transform: scale(1.1); /* Efecto de aumento al pasar el mouse */
-}
+        .social-icon img:hover {
+            transform: scale(1.1);
+            /* Efecto de aumento al pasar el mouse */
+        }
 
-#ver-certificados {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    margin-top: 10px;
-    display: block;
-    font-family: inherit;
-    border-radius: 10%;
-}
+        #ver-certificados {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            font-family: inherit;
+            border-radius: 10%;
+        }
 
-#certificados {
-    margin-top: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    background-color: #1f1f1f;  /* Color más oscuro para mejorar contraste */
-    color: white;  /* Asegura que el texto sea blanco */
-    display: none; /* Mantenerlo oculto por defecto */
-}
+        #certificados {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #1f1f1f;
+            /* Color más oscuro para mejorar contraste */
+            color: white;
+            /* Asegura que el texto sea blanco */
+            display: none;
+            /* Mantenerlo oculto por defecto */
+        }
 
-#certificados a {
-    color: #4CAF50; /* Color para los enlaces */
-    text-decoration: none; /* Sin subrayado */
-}
+        #certificados a {
+            color: #4CAF50;
+            /* Color para los enlaces */
+            text-decoration: none;
+            /* Sin subrayado */
+        }
 
-#certificados a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
-}
+        #certificados a:hover {
+            text-decoration: underline;
+            /* Subrayado al pasar el ratón */
+        }
 
 
 
-@keyframes glitch {
-    0% {
-        transform: translate(2px, 2px);
-        clip-path: polygon(10% 0, 90% 0, 90% 100%, 10% 100%);
-    }
-    100% {
-        transform: translate(-2px, -2px);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-}
-/* Removed misplaced box-shadow declaration */
+        @keyframes glitch {
+            0% {
+                transform: translate(2px, 2px);
+                clip-path: polygon(10% 0, 90% 0, 90% 100%, 10% 100%);
+            }
+
+            100% {
+                transform: translate(-2px, -2px);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+        }
+
+        /* Removed misplaced box-shadow declaration */
 
 
         header h1 {
@@ -217,21 +236,24 @@ li:hover .submenu {
         }
 
         .credly-link {
-    color: white !important;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espacio entre la imagen y el texto */
-}
+            color: white !important;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            /* Espacio entre la imagen y el texto */
+        }
 
-.credly-link:hover {
-    color: #ddd; /* Color opcional al pasar el mouse */
-}
+        .credly-link:hover {
+            color: #ddd;
+            /* Color opcional al pasar el mouse */
+        }
 
-.credly-img {
-    width: 50px;
-    height: auto; /* Mantiene la proporción original */
-}
+        .credly-img {
+            width: 50px;
+            height: auto;
+            /* Mantiene la proporción original */
+        }
 
         section {
             padding: 4rem 2rem;
@@ -265,132 +287,146 @@ li:hover .submenu {
         }
 
         .portfolio a {
-    color: white !important;
-    text-decoration: none !important; /* Elimina el subrayado */
-}
+            color: white !important;
+            text-decoration: none !important;
+            /* Elimina el subrayado */
+        }
 
-.portfolio a:hover {
-    text-decoration: none !important; /* Asegura que no haya subrayado al pasar el cursor */
-}
+        .portfolio a:hover {
+            text-decoration: none !important;
+            /* Asegura que no haya subrayado al pasar el cursor */
+        }
 
         .project-card img {
-    width: 100%; /* Para que se ajuste al ancho del contenedor */
-    max-width: 320px; /* Define un tamaño máximo */
-    height: auto; /* Mantiene la proporción */
-    border-radius: 8px;
-    object-fit: cover; /* Evita que se distorsione */
-}
+            width: 100%;
+            /* Para que se ajuste al ancho del contenedor */
+            max-width: 320px;
+            /* Define un tamaño máximo */
+            height: auto;
+            /* Mantiene la proporción */
+            border-radius: 8px;
+            object-fit: cover;
+            /* Evita que se distorsione */
+        }
 
 
         .project-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
         .contact-icon {
-    width: 20px; /* Tamaño más pequeño */
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 10px; /* Espacio entre el icono y el texto */
-}
+            width: 20px;
+            /* Tamaño más pequeño */
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+            /* Espacio entre el icono y el texto */
+        }
 
-.contact-icon:hover {
-    transform: rotate(360deg);
-    transition: transform 0.5s;
-}
+        .contact-icon:hover {
+            transform: rotate(360deg);
+            transition: transform 0.5s;
+        }
 
-ul {
-    list-style: none; /* Quita los puntos de la lista */
-    padding: 0;
-}
+        ul {
+            list-style: none;
+            /* Quita los puntos de la lista */
+            padding: 0;
+        }
 
-ul a {
-    display: flex;
-    align-items: center; /* Alinea ícono y texto */
-    gap: 8px; /* Espacio adicional entre ícono y texto */
-    text-decoration: none; /* Evita subrayado en los enlaces */
-    margin-bottom: 10px; /* Espacio entre cada enlace */
-    color: aliceblue;
-}
-
-
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #1f1f1f;
-    color: #b3b3b3;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    /* Barra de navegación en dispositivos móviles */
-
-    header {
-        padding-top: 100px; /* Aumenta el espacio superior en móviles */
-    }
-
-    .text-content {
-        margin-top: 120px; /* Asegura que el contenido de .text-content no se superponga */
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    /* Títulos y texto en el header */
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    header p {
-        font-size: 1.2rem;
-        max-width: 90%;
-    }
-
-    /* Ajustes de imagen de perfil */
-    .profile-image {
-        width: 300px;
-        height: 300px;
-        margin-bottom: 1rem;
-    }
-
-    /* Contenedor de contenido del header */
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Sección de proyectos */
-    .portfolio {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    /* Ajustes del footer */
-    footer p {
-        font-size: 0.8rem;
-    }
-
-    /* Ajuste del icono de contacto */
-    .contact-icon {
-        width: 18px;
-        height: 18px;
-    }
+        ul a {
+            display: flex;
+            align-items: center;
+            /* Alinea ícono y texto */
+            gap: 8px;
+            /* Espacio adicional entre ícono y texto */
+            text-decoration: none;
+            /* Evita subrayado en los enlaces */
+            margin-bottom: 10px;
+            /* Espacio entre cada enlace */
+            color: aliceblue;
+        }
 
 
-}
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #1f1f1f;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            /* Barra de navegación en dispositivos móviles */
+
+            header {
+                padding-top: 100px;
+                /* Aumenta el espacio superior en móviles */
+            }
+
+            .text-content {
+                margin-top: 120px;
+                /* Asegura que el contenido de .text-content no se superponga */
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            /* Títulos y texto en el header */
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+                max-width: 90%;
+            }
+
+            /* Ajustes de imagen de perfil */
+            .profile-image {
+                width: 300px;
+                height: 300px;
+                margin-bottom: 1rem;
+            }
+
+            /* Contenedor de contenido del header */
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* Sección de proyectos */
+            .portfolio {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            /* Ajustes del footer */
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            /* Ajuste del icono de contacto */
+            .contact-icon {
+                width: 18px;
+                height: 18px;
+            }
 
 
+        }
     </style>
 </head>
+
 <body id="inicio">
 
     <nav>
         <h2>Bienvenidos!</h2>
-        
+
         <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre Mí</a></li>
@@ -399,18 +435,19 @@ footer {
             <li>
                 Currículum
                 <ul class="submenu">
-                  <li><a href="images/CVFDLesp.pdf" download="Francisco-Delgado-CV-ES.pdf">Versión en Español</a></li>
-                  <li><a href="images/CVFDLeng.pdf" download="Francisco-Delgado-CV-EN.pdf">Versión en Inglés</a></li>
+                    <li><a href="images/CVFDLesp.pdf" download="Francisco-Delgado-CV-ES.pdf">Versión en Español</a></li>
+                    <li><a href="images/CVFDLeng.pdf" download="Francisco-Delgado-CV-EN.pdf">Versión en Inglés</a></li>
                 </ul>
-              </li>
-              
+            </li>
+
         </ul>
     </nav>
     <header>
         <div class="header-content">
             <div class="text-content">
-                <h1>¡Hola! Soy Fran Delgado</h1>
-                <p>Desarrollador web creando experiencias digitales impactantes. Aquí te presento algunos de mis proyectos más recientes.</p>
+                <h1>Web Developer especializado en negocios, portales y soluciones digitales</h1>
+                <p>Desarrollo experiencias web modernas, sistemas y automatizaciones que ayudan a empresas a conseguir
+                    clientes y optimizar procesos.</p>
             </div>
             <div class="image-content">
                 <img src="images/fdcartoon.png" alt="Fran Delgado" class="profile-image" />
@@ -432,138 +469,245 @@ footer {
                     </a>
                 </div>
             </section>
-            
-            
-            
+
+
+
         </div>
     </header>
-    
+
     <section id="sobre-mi">
         <h2>Sobre Mí</h2>
-        <p>Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas de distintos tamaños y rubros. Posteriormente, <br>
-            amplié mi enfoque hacia el análisis de datos y el emprendimiento. Actualmente, soy agente de bienes raíces y desarrollador web full stack, <br>
-            especializado en front-end. Mis certificaciones en análisis de datos y desarrollo web me permiten combinar conocimientos en negocios y <br>
+        <p>Soy Licenciado en Administración de Empresas con experiencia en el área comercial de empresas de distintos
+            tamaños y rubros. Posteriormente, <br>
+            amplié mi enfoque hacia el análisis de datos y el emprendimiento. Actualmente, soy agente de bienes raíces y
+            desarrollador web full stack, <br>
+            especializado en front-end. Mis certificaciones en análisis de datos y desarrollo web me permiten combinar
+            conocimientos en negocios y <br>
             tecnología para crear soluciones digitales efectivas.</p>
 
-            <h3>Estudios</h3>
-            <ul>
-                <li>Licenciatura en Administración de Empresas</li>
-                <li>Certificación en Análisis de Datos y Ciencia de Datos</li>
-                <li>Certificación en Desarrollo Web Full Stack</li>
-                <li>Curso completado de Amazon Web Services</li>
-                <!-- Agrega más si es necesario -->
-            </ul>
-        
-            <p>
-                <a href="https://www.credly.com/users/francisco-delgado-l" target="_blank" class="credly-link">
-                    <img src="images/credly.jpg" alt="Credly" class="credly-img">
-                    Ver mis credenciales en Credly
-                </a>
-            </p>
-            
-            <button id="ver-certificados">Mostrar Certificados</button>
+        <h3>Estudios</h3>
+        <ul>
+            <li>Licenciatura en Administración de Empresas</li>
+            <li>Certificación en Análisis de Datos y Ciencia de Datos</li>
+            <li>Certificación en Desarrollo Web Full Stack</li>
+            <li>Curso completado de Amazon Web Services</li>
+            <!-- Agrega más si es necesario -->
+        </ul>
 
-            <div id="certificados" style="display: none;">
-                <p>Aquí puedes ver mis certificados:</p>
-                <ul>
-                    <li><a href="images/DataAnalyticsCertif.pdf" target="_blank">Certificado de Análisis de Datos</a></li>
-                    <li><a href="images/FullStackSoftwareDeveloperCertif.pdf" target="_blank">Certificado de Desarrollo Web Full Stack</a></li>
-                    <li><a href="images/Data Science Certificate.pdf" target="_blank">Certificado de Ciencia de Datos</a></li>
-                    <li><a href="images/GitandGitHubCertif.pdf" target="_blank">Certificado de Git y GitHub</a></li>
-                    <li><a href="images/EF SET Certificate.pdf" target="_blank">Certificado de EFSet (inglés)</a></li>
-                    <li><a href="images/AWSCLoudSolutionsArchitect.pdf" target="_blank">Certificado de AWS</a></li>
-                </ul>
-            </div>
-            
+        <p>
+            <a href="https://www.credly.com/users/francisco-delgado-l" target="_blank" class="credly-link">
+                <img src="images/credly.jpg" alt="Credly" class="credly-img">
+                Ver mis credenciales en Credly
+            </a>
+        </p>
+
+        <button id="ver-certificados">Mostrar Certificados</button>
+
+        <div id="certificados" style="display: none;">
+            <p>Aquí puedes ver mis certificados:</p>
+            <ul>
+                <li><a href="images/DataAnalyticsCertif.pdf" target="_blank">Certificado de Análisis de Datos</a></li>
+                <li><a href="images/FullStackSoftwareDeveloperCertif.pdf" target="_blank">Certificado de Desarrollo Web
+                        Full Stack</a></li>
+                <li><a href="images/Data Science Certificate.pdf" target="_blank">Certificado de Ciencia de Datos</a>
+                </li>
+                <li><a href="images/GitandGitHubCertif.pdf" target="_blank">Certificado de Git y GitHub</a></li>
+                <li><a href="images/EF SET Certificate.pdf" target="_blank">Certificado de EFSet (inglés)</a></li>
+                <li><a href="images/AWSCLoudSolutionsArchitect.pdf" target="_blank">Certificado de AWS</a></li>
+            </ul>
+        </div>
+
     </section>
     <section id="proyectos">
         <h2>Mis Proyectos</h2>
         <div class="portfolio">
             <div class="project-card">
-                <a href="https://drpoletti.com" target="_blank">
-                    <img src="images/webfabipol.jpg" alt="Proyecto 1">
-                    <p>Website oficial Dr. Poletti<br>
-                    (en desarrollo)</p>
+                <a href="https://homy.com.py/" target="_blank">
+                    <img src="images/homy.jpg" alt="Homy Paraguay">
+
+                    <div class="project-info">
+                        <h3>Homy Paraguay – Portal inmobiliario</h3>
+
+                        <p>
+                            Desarrollo de un portal inmobiliario para publicación y búsqueda de propiedades,
+                            enfocado en experiencia móvil, velocidad y captación de leads.
+                        </p>
+
+                        <p><strong>Rol:</strong> Frontend + UI + integración</p>
+                        <p><strong>Stack:</strong> React, APIs, Responsive Design, SEO</p>
+                    </div>
                 </a>
             </div>
+
+
             <div class="project-card">
-                <a href="https://frandelgadol.github.io/nuevawebepika/" target="_blank">
-                    <img src="images/webepika.jpg" alt="Proyecto 2">
-                    <p>Website Épika (banda de rock)<br>
-                        (en desarrollo)</p>
+                <a href="https://drpoletti.com" target="_blank">
+                    <img src="images/webfabipol.jpg" alt="Doctor Poletti website">
+
+                    <div class="project-info">
+                        <h3>Dr. Poletti – Website médico profesional</h3>
+
+                        <p>
+                            Desarrollo de sitio web profesional para un cirujano ortopédico en España,
+                            enfocado en presencia digital, confianza médica y captación de pacientes internacionales.
+                        </p>
+
+                        <p><strong>Enfoque:</strong> Branding médico + credibilidad + conversión</p>
+                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend + estructura web</p>
+                        <p><strong>Optimización:</strong> Responsive design + experiencia de usuario</p>
+                    </div>
                 </a>
             </div>
+
             <div class="project-card">
                 <a href="https://frandelgadol.github.io/mundobambini/" target="_blank">
-                    <img src="images/webbambini.jpg" alt="Proyecto 3">
-                    <p>Website Mundo Bambini<br>
-                        (en desarrollo)</p>
+                    <img src="images/webbambini.jpg" alt="Mundo Bambini website">
+
+                    <div class="project-info">
+                        <h3>Mundo Bambini – Sitio web infantil</h3>
+
+                        <p>
+                            Desarrollo de sitio web para marca enfocada en contenido y servicios infantiles,
+                            orientado a una experiencia visual amigable, clara y atractiva para padres y usuarios.
+                        </p>
+
+                        <p><strong>Enfoque:</strong> UX visual + branding infantil + navegación simple</p>
+                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend</p>
+                        <p><strong>Optimización:</strong> Diseño responsive + estructura de contenido</p>
+                    </div>
                 </a>
             </div>
+
             <div class="project-card">
                 <a href="https://uniteakw.com.py/" target="_blank">
-                    <img src="images/kwlanding.jpg" alt="Proyecto 4">
-                    <p>Landing KW jobs<br>
+                    <img src="images/kwlanding.jpg" alt="KW Jobs Landing Page">
+
+                    <div class="project-info">
+                        <h3>KW Jobs – Landing page de reclutamiento</h3>
+
+                        <p>
+                            Desarrollo de landing page enfocada en captación de candidatos para reclutamiento
+                            inmobiliario,
+                            optimizada para conversión y generación de leads.
                         </p>
+
+                        <p><strong>Enfoque:</strong> Captación de leads + conversión + UX orientado a empleo</p>
+                        <p><strong>Rol:</strong> Diseño UI + desarrollo frontend + estructura de conversión</p>
+                        <p><strong>Optimización:</strong> Formularios, claridad de mensaje y experiencia móvil</p>
+                    </div>
                 </a>
             </div>
         </div>
-    </section>
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Puedes contactarme a través de los siguientes medios:</p>
-        <ul>
-            
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <p>
+                Desarrollo soluciones digitales enfocadas en ayudar a negocios a crecer, conseguir clientes y mejorar su
+                presencia online.
+            </p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <h3>Websites corporativos</h3>
+                    <p>
+                        Sitios web modernos, rápidos y optimizados para empresas que quieren transmitir confianza y
+                        profesionalismo.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Landing Pages de conversión</h3>
+                    <p>
+                        Páginas enfocadas en generar clientes, ventas o contactos mediante diseño estratégico y UX
+                        optimizado.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Portales inmobiliarios</h3>
+                    <p>
+                        Sistemas de publicación y búsqueda de propiedades con experiencia optimizada para usuarios y
+                        agentes.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Automatización con IA</h3>
+                    <p>
+                        Soluciones que integran inteligencia artificial para automatizar procesos, formularios y
+                        atención al cliente.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Integración de sistemas</h3>
+                    <p>
+                        Conexión de APIs, CRMs y herramientas externas para centralizar y automatizar la gestión de
+                        negocios.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Optimización web</h3>
+                    <p>
+                        Mejora de velocidad, SEO básico, experiencia móvil y rendimiento general del sitio.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes contactarme a través de los siguientes medios:</p>
+            <ul>
+
                 <a href="https://wa.me/595994607333" target="_blank">
-                    <img src="https://img.icons8.com/ios-filled/50/4CAF50/whatsapp.png" alt="WhatsApp" class="contact-icon">
+                    <img src="https://img.icons8.com/ios-filled/50/4CAF50/whatsapp.png" alt="WhatsApp"
+                        class="contact-icon">
                     Mensaje al 0994 607333
                 </a>
-            
-            
+
+
                 <a href="mailto:franciscodelgalop@gmail.com">
-                    <img src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png" alt="Email" class="contact-icon">
+                    <img src="https://img.icons8.com/ios-filled/50/FFFFFF/new-post.png" alt="Email"
+                        class="contact-icon">
                     franciscodelgalop@gmail.com
                 </a>
-            
-        </ul>
-    </section>
-    
-    <footer>
-        <p>© 2025 Fran Delgado - Todos los derechos reservados</p>
-    </footer>
 
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
+            </ul>
+        </section>
+
+        <footer>
+            <p>© 2025 Fran Delgado - Todos los derechos reservados</p>
+        </footer>
+
+        <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
                 });
             });
-        });
 
-        document.getElementById("ver-certificados").addEventListener("click", function() {
-    let div = document.getElementById("certificados");
-    // Si la propiedad display es "none", lo cambiamos a "block"
-    if (div.style.display === "none" || div.style.display === "") {
-        div.style.display = "block"; // Muestra el div
-        this.textContent = "Ocultar Certificados"; // Cambia el texto del botón
-    } else {
-        div.style.display = "none"; // Oculta el div
-        this.textContent = "Mostrar Certificados"; // Cambia el texto del botón
-    }
-});
-    </script>
+            document.getElementById("ver-certificados").addEventListener("click", function () {
+                let div = document.getElementById("certificados");
+                // Si la propiedad display es "none", lo cambiamos a "block"
+                if (div.style.display === "none" || div.style.display === "") {
+                    div.style.display = "block"; // Muestra el div
+                    this.textContent = "Ocultar Certificados"; // Cambia el texto del botón
+                } else {
+                    div.style.display = "none"; // Oculta el div
+                    this.textContent = "Mostrar Certificados"; // Cambia el texto del botón
+                }
+            });
+        </script>
 
-    
+
 </body>
+
 </html>
-
-
-
-
-
-
-
-
