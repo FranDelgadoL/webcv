@@ -645,39 +645,27 @@
                 Aquí puedes ver mis certificados:
             </p>
 
-            <ul>
-
-                <li data-es="Certificado de Análisis de Datos" data-en="Data Analysis Certificate">
-
-                    Certificado de Análisis de Datos
-                </li>
-
-                <li data-es="Certificado de Desarrollo Web Full Stack" data-en="Full Stack Web Development Certificate">
-
-                    Certificado de Desarrollo Web Full Stack
-                </li>
-
-                <li data-es="Certificado de Ciencia de Datos" data-en="Data Science Certificate">
-
-                    Certificado de Ciencia de Datos
-                </li>
-
-                <li data-es="Certificado de Git y GitHub" data-en="Git and GitHub Certificate">
-
-                    Certificado de Git y GitHub
-                </li>
-
-                <li data-es="Certificado de EFSet (inglés)" data-en="EFSET English Certificate">
-
-                    Certificado de EFSet (inglés)
-                </li>
-
-                <li data-es="Certificado de AWS" data-en="AWS Certificate">
-
-                    Certificado de AWS
-                </li>
-
+            <ul id="lista-certificados">
+                <li class="certificado-item" data-files="images/DataAnalyticsCertif.pdf"
+                    data-es="Certificado de Análisis de Datos" data-en="Data Analysis Certificate">Certificado de
+                    Análisis de Datos</li>
+                <li class="certificado-item" data-files="images/FullStackSoftwareDeveloperCertif.pdf"
+                    data-es="Certificado de Desarrollo Web Full Stack" data-en="Full Stack Web Development Certificate">
+                    Certificado de Desarrollo Web Full Stack</li>
+                <li class="certificado-item" data-files="images/Data Science Certificate.pdf"
+                    data-es="Certificado de Ciencia de Datos" data-en="Data Science Certificate">Certificado de Ciencia
+                    de Datos</li>
+                <li class="certificado-item" data-files="images/GitandGitHubCertif.pdf"
+                    data-es="Certificado de Git y GitHub" data-en="Git and GitHub Certificate">Certificado de Git y
+                    GitHub</li>
+                <li class="certificado-item" data-files="images/EF SET Certificate.pdf"
+                    data-es="Certificado de EFSet (inglés)" data-en="EFSET English Certificate">Certificado de EFSet
+                    (inglés)</li>
+                <li class="certificado-item" data-files="images/AWSCertificates.pdf" data-es="Certificado de AWS"
+                    data-en="AWS Certificate">Certificados de AWS</li>
             </ul>
+
+            <div id="visor-certificados" style="margin-top: 20px;"></div>
 
         </div>
 
@@ -1008,48 +996,71 @@
         </footer>
 
         <script>
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute("href")).scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
+            // Usamos 'DOMContentLoaded' para asegurar que TODO el HTML esté cargado antes de ejecutar nada
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // 1. Navegación suave
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute("href"));
+                        if (target) {
+                            target.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
                     });
                 });
-            });
 
-            document.getElementById("ver-certificados").addEventListener("click", function () {
-                let div = document.getElementById("certificados");
-                // Si la propiedad display es "none", lo cambiamos a "block"
-                if (div.style.display === "none" || div.style.display === "") {
-                    div.style.display = "block"; // Muestra el div
-                    this.textContent = "Ocultar Certificados"; // Cambia el texto del botón
-                } else {
-                    div.style.display = "none"; // Oculta el div
-                    this.textContent = "Mostrar Certificados"; // Cambia el texto del botón
+                // 2. Lógica del botón de Certificados
+                const btnCertificados = document.getElementById("ver-certificados");
+                const divCertificados = document.getElementById("certificados");
+
+                if (btnCertificados && divCertificados) {
+                    btnCertificados.addEventListener("click", function () {
+                        const isHidden = divCertificados.style.display === "none" || divCertificados.style.display === "";
+
+                        divCertificados.style.display = isHidden ? "block" : "none";
+
+                        // Traducción dinámica del texto del botón
+                        const lang = localStorage.getItem("lang") || "es";
+                        this.textContent = isHidden ?
+                            (lang === "en" ? "Hide Certificates" : "Ocultar Certificados") :
+                            (lang === "en" ? "Show Certificates" : "Mostrar Certificados");
+                    });
                 }
+
+                // 3. Lógica para abrir PDFs (usando delegación de eventos por seguridad)
+                const lista = document.getElementById("lista-certificados");
+                if (lista) {
+                    lista.addEventListener("click", function (e) {
+                        const target = e.target.closest('.certificado-item');
+                        if (target) {
+                            const archivos = target.getAttribute('data-files').split(',');
+                            archivos.forEach(ruta => {
+                                console.log("Intentando abrir: " + ruta.trim());
+                                window.open(ruta.trim(), '_blank');
+                            });
+                        }
+                    });
+                }
+
+                // 4. Traductor de idiomas
+                function setLang(lang) {
+                    localStorage.setItem("lang", lang);
+                    document.querySelectorAll("[data-es]").forEach(el => {
+                        el.innerText = (lang === "en") ? el.getAttribute("data-en") : el.getAttribute("data-es");
+                    });
+                }
+
+                // Eventos para los botones de idioma
+                window.setLang = setLang; // Hacer la función global para el onclick
+
+                // Carga inicial
+                const langGuardado = localStorage.getItem("lang") || "es";
+                setLang(langGuardado);
             });
         </script>
 
-        <script>
-            function setLang(lang) {
-                localStorage.setItem("lang", lang);
 
-                document.querySelectorAll("[data-es]").forEach(el => {
-                    if (lang === "en") {
-                        el.innerText = el.getAttribute("data-en");
-                    } else {
-                        el.innerText = el.getAttribute("data-es");
-                    }
-                });
-            }
-
-            // cargar idioma guardado
-            window.addEventListener("load", () => {
-                const lang = localStorage.getItem("lang") || "es";
-                setLang(lang);
-            });
-        </script>
 
 
 </body>
